@@ -57,7 +57,7 @@ def shift_out(data, data_pin, clock_pin):
 while True:
     current_time = int(time.strftime("%I%M"))
 
-    if (current_time % 1000) == 0:
+    if ((current_time // 1000) % 10) == 0:
         pass
     else:
         GPIO.output(latch_pin, False)
