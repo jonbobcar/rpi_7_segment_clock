@@ -57,13 +57,13 @@ def shift_out(data, data_pin, clock_pin):
 while True:
     current_time = int(time.strftime("%I%M"))
 
-    if ((current_time // 1000) % 10) == 0:
-        pass
-    else:
-        GPIO.output(latch_pin, False)
-        shift_out(digit[1], data_pin, clock_pin)
-        shift_out(number[(current_time // 1000) % 10], data_pin, clock_pin)
-        GPIO.output(latch_pin, True)
+    # if ((current_time // 1000) % 10) == 0:
+    #     pass
+    # else:
+    #     GPIO.output(latch_pin, False)
+    #     shift_out(digit[1], data_pin, clock_pin)
+    #     shift_out(number[(current_time // 1000) % 10], data_pin, clock_pin)
+    #     GPIO.output(latch_pin, True)
     
     GPIO.output(latch_pin, False)
     shift_out(digit[2], data_pin, clock_pin)
